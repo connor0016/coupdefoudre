@@ -11,10 +11,6 @@
     transition: all 0.3s linear;
 }
 
-.p-header.is-active .p-hamburger{
-    height: 84px;
-}
-
 .p-hamburger__item{
     position: relative;
     width: 24px;
@@ -66,6 +62,7 @@
     
     .p-hamburger{
         display: flex;
+        height: 84px;
     }
 }
 

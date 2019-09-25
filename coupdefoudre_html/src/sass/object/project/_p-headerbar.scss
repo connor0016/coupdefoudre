@@ -30,7 +30,14 @@
 
 
 @media only screen and (max-width: 1024px){
-     .p-headerbar__nav{
+    
+    .p-headerbar{
+        padding-bottom: var(--spacing-m);
+    }
+    .p-headerbar__logo{
+        margin-bottom: 0;
+    }
+    .p-headerbar__nav{
         display: none;
     }
 }
