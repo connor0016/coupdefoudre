@@ -1,0 +1,15 @@
+.l-footer{
+    grid-area: footer;
+    max-width: 100%;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: var(--spacing-s);
+    background-color: #222;
+}
+
+
+
+@media screen and (max-width: 414px){
+    /*外枠(padding)が必要かもしれない*/
+}

@@ -1,0 +1,27 @@
+.p-logo{
+    text-align: center;
+}
+
+.p-logo__img{
+    max-width: 240px;
+}
+
+
+
+@media screen and (max-width: 1024px){
+    
+    .p-logo{
+        text-align: left;
+    }
+    
+    .p-logo__img{
+        max-width: 200px;
+    }
+}
+
+@media screen and (max-width: 414px){
+    
+    .p-logo__img{
+        max-width: 160px;
+    }
+}

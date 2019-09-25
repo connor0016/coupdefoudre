@@ -1,0 +1,25 @@
+.p-sec-gallery{
+    margin-bottom: var(--spacing-x-l)
+}
+
+.p-sec-gallery__title{
+    margin-bottom: var(--spacing-l);
+}
+
+.p-sec-gallery__cont{
+    grid-gap: var(--spacing-xx-s);
+}
+
+.p-sec-gallery__item{
+    text-align: center;
+}
+
+.p-sec-gallery__item img{
+    width: 240px;
+    filter: grayscale(100%);
+    transition: all 0.5s ease;
+}
+
+.p-sec-gallery__item img:hover{
+    filter: grayscale(0);
+}
