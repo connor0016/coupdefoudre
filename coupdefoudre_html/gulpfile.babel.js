@@ -3,42 +3,43 @@
 //**************************************************
 import gulp from 'gulp';
 import babel from 'gulp-babel';
-//  styles
+
 import sass from 'gulp-sass';
 import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import cleanCSS from 'gulp-clean-css';
-//  scripts
+
 import webpack from 'webpack';
 import webpackStream from 'webpack-stream';
-import webpackConfig from './webpack.config';
-//  images
+import webpackDev from './webpack.dev';
+import webpackProd from './webpack.Prod';
+
 import imagemin from 'gulp-imagemin';
 import mozjpeg from 'imagemin-mozjpeg';
 import pngquant from 'imagemin-pngquant';
-//  Other
+
 import browserSync  from 'browser-sync';
 import del from 'del';
 import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
 import debug from 'gulp-debug';
 sass.compiler = require('node-sass');
-//import rename   from 'gulp-rename';
 
-//**************************************************
-//  Paths
-//**************************************************
 const paths = {
+    html: {
+        src: './src/assets/**/*.html',
+        dest: './dist',
+    },
     styles: {
-        src: './src/sass/**/*.scss',
+        src: './src/assets/sass/**/*.scss',
         dest: './dist/assets/css'
     },
     scripts: {
-        src: './src/js/**/*.js',
+        src: './src/assets/js/**/*.js',
         dest: './dist/assets/js'
     },
     images: {
-        src: './src/images/*.{jpg,jpeg,png,svg,gif}',
+        src: './src/assets/images/*.{jpg,jpeg,png,svg,gif}',
         dest: './dist/assets/images'
     }
 };
@@ -48,35 +49,55 @@ const paths = {
 //**************************************************
 const clean = () => del([ 'dist/assets' ]);
 export { clean };
-
 //**************************************************
-//  CSS
+//  HTML
 //**************************************************
-//sass.compiler = require('node-sass');
-//console.log(sass.compiler);
-
+export function html() {
+    return gulp.src(paths.html.src)
+    .pipe(browserSync.stream())
+    .pipe(gulp.dest(paths.html.dest));
+}
+//**************************************************
+//  Styles
+//**************************************************
 export function styles() {
     return gulp.src(paths.styles.src, { sourcemaps: true })
         .pipe(plumber({errorHandler: notify.onError('<%= error.message %>')}))
         .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
         .pipe(postcss([autoprefixer()]))
-        .pipe(cleanCSS())
         .pipe(gulp.dest(paths.styles.dest, { sourcemaps: './map'}))
         .pipe(browserSync.stream());
 }
-
+//  Production
+export function styles_prod() {
+    return gulp.src(paths.styles.src)
+        .pipe(plumber({errorHandler: notify.onError('<%= error.message %>')}))
+        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+        .pipe(postcss([autoprefixer()]))
+        .pipe(cleanCSS())
+        .pipe(gulp.dest(paths.styles.dest))
+        .pipe(browserSync.stream());
+}
 //**************************************************
-//  JS
+//  Scripts
 //**************************************************
 export function scripts() {
-    return webpackStream(webpackConfig, webpack)
+    return gulp.src(paths.scripts.src, { sourcemaps: true })
+        .pipe(webpackStream(webpackDev, webpack))
+        .pipe(plumber({errorHandler: notify.onError('<%= error.message %>')}))
+        .pipe(gulp.dest(paths.scripts.dest, { sourcemaps: './map'}))
+        .pipe(browserSync.stream());
+}
+//  Production
+export function scripts_prod() {
+    return gulp.src(paths.scripts.src)
+        .pipe(webpackStream(webpackProd, webpack))
         .pipe(plumber({errorHandler: notify.onError('<%= error.message %>')}))
         .pipe(gulp.dest(paths.scripts.dest))
         .pipe(browserSync.stream());
 }
-
 //**************************************************
-//  IMG
+//  images
 //**************************************************
 export function images() {
     return gulp.src(paths.images.src)
@@ -95,16 +116,22 @@ export function images() {
         .pipe(gulp.dest(paths.images.dest))
         .pipe(browserSync.stream());
 }
-
 //**************************************************
 //  Watch
 //**************************************************
 export function watchFiles() {
-    gulp.watch(paths.styles.src, styles);
-    gulp.watch(paths.scripts.src, scripts);
-    gulp.watch(paths.images.src, images);
+    gulp.watch(paths.html.src, gulp.task('html'));
+    gulp.watch(paths.styles.src, gulp.task('styles'));
+    gulp.watch(paths.scripts.src, gulp.task('scripts'));
+    gulp.watch(paths.images.src, gulp.task('images'));
 }
 
+export function watchFiles_prod() {
+    gulp.watch(paths.html.src, gulp.task('html'));
+    gulp.watch(paths.styles.src, gulp.task('styles_prod'));
+    gulp.watch(paths.scripts.src, gulp.task('scripts_prod'));
+    gulp.watch(paths.images.src, gulp.task('images'));
+}
 //**************************************************
 //  Browawer-sync
 //**************************************************
@@ -115,17 +142,16 @@ export function browsersync() {
         }
     });
 }
-
-const build = gulp.series(clean, gulp.parallel(styles, scripts, images, browsersync, watchFiles));
-
-
-/*exports.styles = styles;
-exports.scripts = scripts;
-exports.images = images;
-exports.watch = watch;*/
-
-export default build;
 //**************************************************
-//  All
+//  Task
 //**************************************************
-//gulp.task('default', gulp.series(gulp.parallel('browser-sync', 'styles', 'js', 'img', 'watch')));
+gulp.task('dev', gulp.series(clean, gulp.parallel(html, styles, scripts, images, watchFiles, browsersync)));
+gulp.task('prod', gulp.series(clean, gulp.parallel(html, styles_prod, scripts_prod, images, watchFiles_prod, browsersync)));
+gulp.task('clean', gulp.series(clean));
+gulp.task('build', gulp.parallel(styles,scripts,images));
+gulp.task('build_prod', gulp.parallel(styles_prod,scripts_prod,images));
+gulp.task('styles',gulp.series(styles));
+gulp.task('styles_prod',gulp.series(styles_prod));
+gulp.task('scripts', gulp.series(scripts));
+gulp.task('scripts_prod', gulp.series(scripts_prod));
+gulp.task('images', gulp.series(images));

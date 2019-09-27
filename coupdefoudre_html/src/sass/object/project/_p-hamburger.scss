@@ -6,8 +6,8 @@
     display: none;
     justify-content: center;
     align-items: center;
-    width: 80px;
-    height: 108px;
+    width: 84px;
+    height: 84px;
     transition: all 0.3s linear;
 }
 
@@ -62,7 +62,6 @@
     
     .p-hamburger{
         display: flex;
-        height: 84px;
     }
 }
 
@@ -71,7 +70,7 @@
 @media screen and (max-width: 414px){
     
     .p-hamburger{
-        width: 65px;
-        height: 65px;
+        width: 67px;
+        height: 67px;
     }
 }
