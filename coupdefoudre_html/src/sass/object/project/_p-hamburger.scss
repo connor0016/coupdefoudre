@@ -73,4 +73,17 @@
         width: 67px;
         height: 67px;
     }
+    
+    .p-hamburger__item{
+        width: 20px;
+        height: 15px;
+    }
+
+    .p-hamburger__item.is-active .p-hamburger__lines-top{
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    .p-hamburger__item.is-active .p-hamburger__lines-bottom{
+        transform: translateY(-6px) rotate(-45deg);
+    }
 }

@@ -27,19 +27,19 @@ sass.compiler = require('node-sass');
 
 const paths = {
     html: {
-        src: './src/assets/**/*.html',
+        src: './src/**/*.html',
         dest: './dist',
     },
     styles: {
-        src: './src/assets/sass/**/*.scss',
+        src: './src/sass/**/*.scss',
         dest: './dist/assets/css'
     },
     scripts: {
-        src: './src/assets/js/**/*.js',
+        src: './src/js/**/*.js',
         dest: './dist/assets/js'
     },
     images: {
-        src: './src/assets/images/*.{jpg,jpeg,png,svg,gif}',
+        src: './src/images/*.{jpg,jpeg,png,svg,gif}',
         dest: './dist/assets/images'
     }
 };
@@ -125,7 +125,7 @@ export function watchFiles() {
     gulp.watch(paths.scripts.src, gulp.task('scripts'));
     gulp.watch(paths.images.src, gulp.task('images'));
 }
-
+//  production
 export function watchFiles_prod() {
     gulp.watch(paths.html.src, gulp.task('html'));
     gulp.watch(paths.styles.src, gulp.task('styles_prod'));
@@ -145,8 +145,8 @@ export function browsersync() {
 //**************************************************
 //  Task
 //**************************************************
-gulp.task('dev', gulp.series(clean, gulp.parallel(html, styles, scripts, images, watchFiles, browsersync)));
-gulp.task('prod', gulp.series(clean, gulp.parallel(html, styles_prod, scripts_prod, images, watchFiles_prod, browsersync)));
+gulp.task('dev', gulp.series(clean, gulp.parallel(html, styles, scripts, images), gulp.parallel(watchFiles, browsersync)));
+gulp.task('prod', gulp.series(clean, gulp.parallel(html, styles_prod, scripts_prod, images, gulp.parallel(watchFiles_prod, browsersync))));
 gulp.task('clean', gulp.series(clean));
 gulp.task('build', gulp.parallel(styles,scripts,images));
 gulp.task('build_prod', gulp.parallel(styles_prod,scripts_prod,images));
