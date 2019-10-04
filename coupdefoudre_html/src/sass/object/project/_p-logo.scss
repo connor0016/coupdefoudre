@@ -1,31 +1,18 @@
 .p-logo{
     text-align: center;
+    transition: all 0.3s linear;
 }
 
-.p-logo__target:hover{
-    opacity: 0.7;
+.p-header.is-active .p-logo{
+    font-size: var(--font-size-normal);
 }
-
-.p-logo__img{
-    max-width: 240px;
-}
-
-
 
 @media screen and (max-width: 1024px){
-    
     .p-logo{
         text-align: left;
-    }
-    
-    .p-logo__img{
-        max-width: 200px;
     }
 }
 
 @media screen and (max-width: 414px){
     
-    .p-logo__img{
-        max-width: 160px;
-    }
 }

@@ -2,21 +2,27 @@
     margin-bottom: var(--spacing-xx-l);
 }
 
-.p-sec-concept__title{
-    padding-bottom: var(--spacing-l);
-}
-
 .p-sec-concept__cont{
     justify-items: center;
     align-items: center;
     text-align: center;
 }
 
-.p-sec-concept__img-01{
+.p-sec-concept__imgbox-01{
+    overflow: hidden;
     order: 1;
 }
 
-.p-sec-concept__img-02{
+.p-sec-concept__img{
+    transition: all 0.4s ease;
+}
+
+.p-sec-concept__img:hover{
+    transform: scale(1.03);
+}
+
+.p-sec-concept__imgbox-02{
+    overflow: hidden;
     order: 4;
 }
 

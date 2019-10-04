@@ -16,6 +16,7 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
+  font-size: 100%;
   font: inherit;
   vertical-align: baseline;
 }
@@ -49,7 +50,7 @@ table {
 }
 
 a {
-  color: black;
+  color: inherit;
   text-decoration: none;
 }
 
@@ -92,6 +93,8 @@ iframe {
   --spacing-l: 64px;
   --spacing-x-l: 128px;
   --spacing-xx-l: 256px;
+  --color-black: #111;
+  --color-gray: #999;
 }
 
 p {
@@ -178,11 +181,7 @@ h2 {
   margin-right: auto;
   margin-left: auto;
   padding: var(--spacing-s);
-  background-color: #222;
-}
-
-@media screen and (max-width: 414px) {
-  /*外枠(padding)が必要かもしれない*/
+  background-color: #e2e2e2;
 }
 
 /*Layout*/
@@ -449,83 +448,44 @@ h2 {
   z-index: 960;
   width: 100%;
   height: auto;
-  padding-top: var(--spacing-m);
-  padding-right: var(--spacing-m);
-  padding-bottom: var(--spacing-s);
-  padding-left: var(--spacing-m);
+  padding: var(--spacing-m);
   background-color: #fff;
-}
-
-.p-headerbar__logo {
-  margin-bottom: var(--spacing-s);
-  transition: all 0.3s linear;
-}
-
-.p-headervar__nav {
-  margin-bottom: var(--spacing-s);
-  transition: all 0.3s linear;
-}
-
-.p-header.is-active .p-headerbar__logo,
-.p-header.is-active .p-headerbar__nav {
-  margin: 0;
-}
-
-@media only screen and (max-width: 1024px) {
-  .p-headerbar {
-    padding-bottom: var(--spacing-m);
-  }
-  .p-headerbar__logo {
-    margin-bottom: 0;
-  }
-  .p-headerbar__nav {
-    display: none;
-  }
 }
 
 .p-logo {
   text-align: center;
+  transition: all 0.3s linear;
 }
 
-.p-logo__target:hover {
-  opacity: 0.7;
-}
-
-.p-logo__img {
-  max-width: 240px;
+.p-header.is-active .p-logo {
+  font-size: var(--font-size-normal);
 }
 
 @media screen and (max-width: 1024px) {
   .p-logo {
     text-align: left;
   }
-  .p-logo__img {
-    max-width: 200px;
-  }
-}
-
-@media screen and (max-width: 414px) {
-  .p-logo__img {
-    max-width: 160px;
-  }
 }
 
 .p-hamburger {
   position: fixed;
+  display: flex;
   top: 0;
   right: 0;
   z-index: 999;
-  display: none;
   justify-content: center;
   align-items: center;
-  width: 84px;
-  height: 84px;
+  padding: 42px var(--spacing-m);
   transition: all 0.3s linear;
+}
+
+.p-header.is-active .p-hamburger {
+  padding: 35px var(--spacing-m);
 }
 
 .p-hamburger__item {
   position: relative;
-  width: 24px;
+  width: 50px;
   height: 18px;
   cursor: pointer;
 }
@@ -536,7 +496,7 @@ h2 {
   position: absolute;
   display: block;
   width: 100%;
-  height: 3px;
+  height: 1px;
   border-radius: 3px;
   content: "";
   cursor: pointer;
@@ -549,7 +509,7 @@ h2 {
 }
 
 .p-hamburger__lines-middle {
-  top: 40%;
+  top: 45%;
 }
 
 .p-hamburger__lines-bottom {
@@ -568,26 +528,27 @@ h2 {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-@media only screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .p-hamburger {
-    display: flex;
+    padding: 32px var(--spacing-m);
+  }
+  .p-header.is-active .p-hamburger {
+    padding: 26px var(--spacing-m);
+  }
+  .p-hamburger__item {
+    width: 40px;
   }
 }
 
 @media screen and (max-width: 414px) {
   .p-hamburger {
-    width: 67px;
-    height: 67px;
+    padding: 21px var(--spacing-m);
+  }
+  .p-header.is-active .p-hamburger {
+    padding: 16px var(--spacing-m);
   }
   .p-hamburger__item {
-    width: 20px;
-    height: 15px;
-  }
-  .p-hamburger__item.is-active .p-hamburger__lines-top {
-    transform: translateY(6px) rotate(45deg);
-  }
-  .p-hamburger__item.is-active .p-hamburger__lines-bottom {
-    transform: translateY(-6px) rotate(-45deg);
+    width: 35px;
   }
 }
 
@@ -632,19 +593,19 @@ h2 {
 }
 
 .p-billboard {
-  padding-top: 160px;
+  padding-top: 102px;
 }
 
 .p-billboard__img {
   width: 100%;
-  height: calc(100vh - 130px);
+  height: calc(100vh - 115px);
   -o-object-fit: cover;
      object-fit: cover;
 }
 
 @media screen and (max-width: 1024px) {
   .p-billboard {
-    padding-top: 85px;
+    padding-top: 83px;
   }
   .p-billboard__img {
     height: calc(100vh - 85px);
@@ -660,7 +621,6 @@ h2 {
   }
 }
 
-/*mobilemenu*/
 .p-mobilemenu {
   position: fixed;
   flex-direction: column;
@@ -669,7 +629,7 @@ h2 {
   right: 0;
   z-index: 990;
   display: none;
-  width: 70%;
+  width: 50%;
   height: 100%;
   padding: var(--spacing-l);
   background-color: #fff;
@@ -681,7 +641,6 @@ h2 {
           animation: slidein_100 0.3s ease-in-out forwards;
 }
 
-/*nav*/
 .p-mobilemenu__nav {
   margin-top: var(--spacing-m);
 }
@@ -768,6 +727,10 @@ h2 {
           animation: fade .3s ease-in-out forwards;
 }
 
+.p-index-title {
+  margin-bottom: var(--spacing-l);
+}
+
 .p-index-title__target {
   padding: var(--spacing-x-s);
   transition: 0.3s;
@@ -775,7 +738,6 @@ h2 {
 
 .p-index-title__target:hover {
   opacity: 0.7;
-  transition: 0.3s;
 }
 
 .p-index-title__en {
@@ -793,32 +755,37 @@ h2 {
   margin-bottom: var(--spacing-xx-l);
 }
 
-.p-sec-news__title {
-  margin-bottom: var(--spacing-l);
-}
-
 .p-sec-news__cont {
-  display: flex;
-  flex-flow: row nowrap;
+  grid-gap: var(--spacing-s);
 }
 
 .p-sec-news__item {
   position: relative;
-  flex: 0 1 calc(100% / 3);
   overflow: hidden;
-  margin-left: var(--spacing-s);
-  padding: var(--spacing-s);
-  word-break: break-all;
 }
 
-.p-sec-news__item:nth-child(1) {
-  margin-left: 0;
+.p-sec-news__description {
+  padding: var(--spacing-s);
 }
 
 .p-sec-news__heading {
-  margin-bottom: var(--spacing-s);
-  text-align: center;
+  margin-bottom: var(--spacing-x-s);
+  text-align: left;
   font-weight: bold;
+}
+
+.p-sec-news__text {
+  color: var(--color-black);
+}
+
+.p-sec-news__day {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray);
+}
+
+.p-sec-news__icon {
+  margin-right: var(--spacing-x-s);
+  color: #f95b5b;
 }
 
 .p-sec-news__mask {
@@ -831,7 +798,7 @@ h2 {
   top: 0;
   left: 0;
   opacity: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.6);
   transition: all 0.6s ease;
 }
 
@@ -872,21 +839,27 @@ h2 {
   margin-bottom: var(--spacing-xx-l);
 }
 
-.p-sec-concept__title {
-  padding-bottom: var(--spacing-l);
-}
-
 .p-sec-concept__cont {
   justify-items: center;
   align-items: center;
   text-align: center;
 }
 
-.p-sec-concept__img-01 {
+.p-sec-concept__imgbox-01 {
+  overflow: hidden;
   order: 1;
 }
 
-.p-sec-concept__img-02 {
+.p-sec-concept__img {
+  transition: all 0.4s ease;
+}
+
+.p-sec-concept__img:hover {
+  transform: scale(1.03);
+}
+
+.p-sec-concept__imgbox-02 {
+  overflow: hidden;
   order: 4;
 }
 
@@ -939,44 +912,17 @@ h2 {
   margin-bottom: var(--spacing-xx-l);
 }
 
-.p-sec-collections__title {
-  margin-bottom: var(--spacing-l);
-}
-
-.p-sec-collections__product__inner {
-  position: relative;
+.p-sec-collections__list {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  margin-right: auto;
-  margin-left: auto;
-  background-color: #000;
-  opacity: 1;
 }
 
-.p-sec-collections__product__img {
-  width: 100%;
-  height: 100%;
-  transition: all 0.5s ease;
-}
-
-.p-sec-collections__product:hover .p-sec-collections__product__img {
-  opacity: 0.5;
-  transform: scale(1.1);
-}
-
-.p-sec-collections__product__name {
-  position: absolute;
-  color: #fff;
+.p-sec-collections__item {
+  flex: 0 1 calc(100% / 2);
+  margin-left: var(--spacing-m);
 }
 
 .p-sec-gallery {
   margin-bottom: var(--spacing-x-l);
-}
-
-.p-sec-gallery__title {
-  margin-bottom: var(--spacing-l);
 }
 
 .p-sec-gallery__cont {
@@ -1006,12 +952,16 @@ h2 {
   }
 }
 
+.p-footer {
+  padding: var(--spacing-x-l) var(--spacing-m);
+}
+
 .p-footer__cont {
   display: flex;
   max-width: 880px;
   margin-right: auto;
   margin-left: auto;
-  padding: var(--spacing-m);
+  margin-bottom: var(--spacing-s);
   text-align: center;
 }
 
@@ -1028,24 +978,11 @@ h2 {
   position: relative;
   display: inline-block;
   padding: var(--spacing-x-s);
-  color: #fff;
+  color: #868686;
 }
 
-.p-footer__target::after {
-  position: absolute;
-  display: block;
-  width: 0;
-  height: 1px;
-  left: 50%;
-  bottom: 0;
-  content: "";
-  background-color: #fff;
-  transition: 0.3s all;
-  transform: translateX(-50%);
-}
-
-.p-footer__target:hover::after {
-  width: 100%;
+.p-footer__target:hover {
+  opacity: 0.7;
 }
 
 .p-footer__copyright {
@@ -1056,7 +993,7 @@ h2 {
 
 .p-footer__copyright__text {
   font-size: var(--font-size-sm);
-  color: #fff;
+  color: var(--color-gray);
 }
 
 @media screen and (max-width: 414px) {

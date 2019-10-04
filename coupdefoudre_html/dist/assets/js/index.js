@@ -97,25 +97,25 @@ eval("const btn = document.querySelector('.js-mobilemenu-btn');\r\nconst mobilem
 
 /***/ }),
 
-/***/ "./src/js/nav.js":
-/*!***********************!*\
-  !*** ./src/js/nav.js ***!
-  \***********************/
+/***/ "./src/js/scroll.js":
+/*!**************************!*\
+  !*** ./src/js/scroll.js ***!
+  \**************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("const toggleActive = (state) => {\r\n    const stateClass = 'is-active';\r\n    const header = document.querySelector('.js-header');\r\n    if (state) {\r\n        header.classList.add(stateClass);\r\n    } else {\r\n        header.classList.remove(stateClass);\r\n    }\r\n};\r\n\r\nwindow.addEventListener('scroll', () => {\r\n    const breakpoint = 1;\r\n    const pos = window.pageYOffset;\r\n\r\n    if (pos > breakpoint) {\r\n        toggleActive(true);\r\n    } else {\r\n        toggleActive(false);\r\n    }\r\n});\n\n//# sourceURL=webpack:///./src/js/nav.js?");
+eval("const toggleActive = (state) => {\r\n    const stateClass = 'is-active';\r\n    const header = document.querySelector('.js-header');\r\n    if (state) {\r\n        header.classList.add(stateClass);\r\n    } else {\r\n        header.classList.remove(stateClass);\r\n    }\r\n};\r\n\r\nwindow.addEventListener('scroll', () => {\r\n    const breakpoint = 1;\r\n    const pos = window.pageYOffset;\r\n\r\n    if (pos > breakpoint) {\r\n        toggleActive(true);\r\n    } \r\n    else {\r\n        toggleActive(false);\r\n    }\r\n});\n\n//# sourceURL=webpack:///./src/js/scroll.js?");
 
 /***/ }),
 
 /***/ 0:
-/*!***************************************************!*\
-  !*** multi ./src/js/mobilenav.js ./src/js/nav.js ***!
-  \***************************************************/
+/*!******************************************************!*\
+  !*** multi ./src/js/mobilenav.js ./src/js/scroll.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("__webpack_require__(/*! C:\\Users\\mina-5u\\public_html\\coupdefoudre\\coupdefoudre_html\\src\\js\\mobilenav.js */\"./src/js/mobilenav.js\");\nmodule.exports = __webpack_require__(/*! C:\\Users\\mina-5u\\public_html\\coupdefoudre\\coupdefoudre_html\\src\\js\\nav.js */\"./src/js/nav.js\");\n\n\n//# sourceURL=webpack:///multi_./src/js/mobilenav.js_./src/js/nav.js?");
+eval("__webpack_require__(/*! C:\\Users\\mina-5u\\Desktop\\coupdefoudre_html - コピー (2)\\src\\js\\mobilenav.js */\"./src/js/mobilenav.js\");\nmodule.exports = __webpack_require__(/*! C:\\Users\\mina-5u\\Desktop\\coupdefoudre_html - コピー (2)\\src\\js\\scroll.js */\"./src/js/scroll.js\");\n\n\n//# sourceURL=webpack:///multi_./src/js/mobilenav.js_./src/js/scroll.js?");
 
 /***/ })
 

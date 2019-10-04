@@ -1,16 +1,16 @@
 .p-billboard{
-    padding-top: 160px;
+    padding-top: 102px;
 }
 
 .p-billboard__img{
     width: 100%;
-    height: calc(100vh - 130px);
+    height: calc(100vh - 115px);
     object-fit: cover;
 }
 
 @media screen and (max-width: 1024px){
     .p-billboard{
-        padding-top: 85px;
+        padding-top: 83px;
     }
     
     .p-billboard__img{

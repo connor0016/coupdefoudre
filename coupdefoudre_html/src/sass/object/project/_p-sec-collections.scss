@@ -2,40 +2,13 @@
     margin-bottom: var(--spacing-xx-l);
 }
 
-.p-sec-collections__title{
-    margin-bottom: var(--spacing-l);
-}
-
-.p-sec-collections__product{
-
-}
-
-.p-sec-collections__product__inner{
-    position: relative;
+.p-sec-collections__list{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    margin-right: auto;
-    margin-left: auto;
-    background-color: #000;
-    opacity: 1;
 }
 
-.p-sec-collections__product__img{
-    width: 100%;
-    height: 100%;
-    transition: all 0.5s ease;
-}
-
-.p-sec-collections__product:hover .p-sec-collections__product__img{
-    opacity: 0.5;
-    transform: scale(1.1);
-}
-
-.p-sec-collections__product__name{
-    position: absolute;
-    color: #fff;
+.p-sec-collections__item{
+    flex: 0 1 calc(100% / 2);
+    margin-left: var(--spacing-m);
 }
 
 
