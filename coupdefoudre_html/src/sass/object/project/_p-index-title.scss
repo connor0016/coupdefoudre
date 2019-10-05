@@ -3,12 +3,12 @@
 }
 
 .p-index-title__target{
-    padding: var(--spacing-x-s);
-    transition: 0.3s;
+    padding: var(--spacing-xx-s);
+    transition: 0.2s;
 }
 
 .p-index-title__target:hover{
-    opacity: 0.7;
+    opacity: 0.6;
 }
 
 .p-index-title__en{
@@ -18,5 +18,4 @@
 .p-index-title__ja{
     margin-left: var(--spacing-x-s);
     font-size: var(--font-size-sm);
-    font-weight: bold;
 }

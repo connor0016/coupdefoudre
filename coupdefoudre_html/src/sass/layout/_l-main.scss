@@ -1,8 +1,6 @@
 .l-main{
-    grid-area: main;
-    grid-row: 1ft;
     width: 100%;
     margin-right: auto;
     margin-left: auto;
-    padding: 0 var(--spacing-m);
+    padding: var(--spacing-x-l)var(--spacing-m);
 }

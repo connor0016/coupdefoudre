@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet'>
 </head>
 
 
 
 <body>
-<div class="l-container c-col">
+<div class="l-container">
     <!-- HEADER -->
-    <header class="l-header c-col__lg-12">
+    <header class="l-header">
         <div class="p-header js-header">
             
             <div class="p-header__headerbar">
                 <div class="p-headerbar">
                     <div class="p-headerbar__logo">
-                        <h3 class="p-logo"><a class="p-logo__target" href="#">COUP DE FOUDRE</a></h3>
+                        <h4 class="p-logo"><a class="p-logo__target" href="#">COUP DE FOUDRE</a></h4>
                     </div>
                 </div>
             </div>
@@ -42,12 +43,12 @@
                 <nav class="p-mobilemenu js-mobilemenu">
                     <div class="p-mobilemenu__nav">
                         <ul class="p-mobilemenu__nav__list">
-                            <li class="p-mobilemenu__nav__item"><a class="p-mobilemenu__nav__target" href="#">HOME</a></li>
-                            <li class="p-mobilemenu__nav__item"><a class="p-mobilemenu__nav__target" href="#">NEWS</a></li>
-                            <li class="p-mobilemenu__nav__item"><a class="p-mobilemenu__nav__target" href="#">CONCEPT</a></li>
-                            <li class="p-mobilemenu__nav__item"><a class="p-mobilemenu__nav__target" href="#">COLLECTIONS</a></li>
-                            <li class="p-mobilemenu__nav__item"><a class="p-mobilemenu__nav__target" href="#">GALLERY</a></li>
-                            <li class="p-mobilemenu__nav__item"><a class="p-mobilemenu__nav__target" href="#">STORE</a></li>
+                            <li class="p-mobilemenu__nav__item"><a class="p-mobilemenu__nav__target" href="#">Home</a></li>
+                            <li class="p-mobilemenu__nav__item"><a class="p-mobilemenu__nav__target" href="#">News</a></li>
+                            <li class="p-mobilemenu__nav__item"><a class="p-mobilemenu__nav__target" href="#">Concept</a></li>
+                            <li class="p-mobilemenu__nav__item"><a class="p-mobilemenu__nav__target" href="#">Collection</a></li>
+                            <li class="p-mobilemenu__nav__item"><a class="p-mobilemenu__nav__target" href="#">Gallery</a></li>
+                            <li class="p-mobilemenu__nav__item"><a class="p-mobilemenu__nav__target" href="#">Store</a></li>
                         </ul>
                     </div>
             
@@ -69,21 +70,20 @@
 
 
     <!-- MAIN -->
-    <main class="l-main c-col__lg-12">
-        <article class="p-main">
-            
-                <section class="p-sec-news c-inner">
-                    
+    <main class="l-main">
+        <div class="p-main">
+            <article class="p-main__list">
+                
+                <section class="p-sec-news p-main__item c-inner">
                     <div class="p-index-title">
-                        <a class="p-index-title__target" href="#"><h2 class="p-index-title__en">NEWS</h2><span class="p-index-title__ja">ニュース</span></a>
+                        <a class="p-index-title__target" href="#"><h2 class="p-index-title__en">News</h2><span class="p-index-title__ja">ニュース</span></a>
                     </div>
-                    
                     <ul class="p-sec-news__cont c-col">
                         <li class="p-sec-news__item c-col__3 c-col__md-6">
                             <a class="p-sec-news__target" href="#">
                                 <img src="assets/images/bnr_look.jpg">
                                 <div class="p-sec-news__description">
-                                    <p class="p-sec-news__heading">SUMMER SALEスタート！</p>
+                                    <p class="p-sec-news__heading">WINTER SALE</p>
                                     <p class="p-sec-news__day"><span class="p-sec-news__icon">NEW</span>2019.09.13</p>
                                 </div>
                                 <div class="p-sec-news__mask">
@@ -95,7 +95,7 @@
                             <a class="p-sec-news__target" href="#">
                                 <img src="assets/images/bnr_look19aw01.jpg">
                                 <div class="p-sec-news__description">
-                                    <p class="p-sec-news__heading">GW特別企画開催！</p>
+                                    <p class="p-sec-news__heading">WINTER COLLECTION</p>
                                     <p class="p-sec-news__day"><span class="p-sec-news__icon">NEW</span>2019.09.13</p>
                                 </div>
                                 <div class="p-sec-news__mask">
@@ -107,7 +107,7 @@
                             <a class="p-sec-news__target" href="#">
                                 <img src="assets/images/bnr_haori.jpg">
                                 <div class="p-sec-news__description">
-                                    <p class="p-sec-news__heading">2019 SUMMER COLLECTION</p>
+                                    <p class="p-sec-news__heading">SUMMER SALE</p>
                                     <p class="p-sec-news__day"><span class="p-sec-news__icon">NEW</span>2019.09.13</p>
                                 </div>
                                 <div class="p-sec-news__mask">
@@ -119,7 +119,7 @@
                             <a class="p-sec-news__target" href="#">
                                 <img src="assets/images/bnr_blouse.jpg">
                                 <div class="p-sec-news__description">
-                                    <p class="p-sec-news__heading">GW特別企画開催！</p>
+                                    <p class="p-sec-news__heading">SUMMER COLLECTION</p>
                                     <p class="p-sec-news__day"><span class="p-sec-news__icon">NEW</span>2019.09.13</p>
                                 </div>
                                 <div class="p-sec-news__mask">
@@ -130,50 +130,53 @@
                     </ul>
                 </section>
             
-                 <section class="p-sec-concept c-inner">
+                 <section class="p-sec-concept p-main__item c-inner">
                     <div class="p-index-title">
-                        <a class="p-index-title__target" href="#"><h2 class="p-index-title__en">CONCEPT</h2><span class="p-index-title__ja">コンセプト</span></a>
+                        <a class="p-index-title__target" href="#"><h2 class="p-index-title__en">Concept</h2><span class="p-index-title__ja">コンセプト</span></a>
                     </div>
                     <ul class="p-sec-concept__cont c-col">
                         <li class="p-sec-concept__imgbox-01 c-col__6 c-col__md-12">
-                            <img class="p-sec-concept__img" src="assets/images/about_01.jpg">
+                            <a class="p-sec-concept__target" href="#"><img class="p-sec-concept__img" src="assets/images/about_01.jpg"></a>
                         </li>
                         <li class="p-sec-concept__description-01 c-col__6 c-col__md-12">
-                            <h3 class="p-sec-concept__heading">Lorem ipsum dolor sit amet</h3>
+                            <h4 class="p-sec-concept__heading">Coup de foudre</h4>
                             <p class="p-sec-concept__text">COUP DE FOUDREはフランス語で「一目惚れ」を表します。<br>あなたがその目で見た瞬間の感情、美しさや可憐さ、その思いを大切にし、身に着けたとき心が躍ってしまう、そんな一着をご用意いたします</p>
                         </li>
                         <li  class="p-sec-concept__imgbox-02 c-col__6 c-col__md-12">
-                            <img class="p-sec-concept__img" src="assets/images/about_02.jpg">
+                            <a class="p-sec-concept__target" href="#"><img class="p-sec-concept__img" src="assets/images/about_02.jpg"></a>
                         </li>
                         <li class="p-sec-concept__description-02 c-col__6 c-col__md-12">
-                            <h3 class="p-sec-concept__heading">Lorem ipsum dolor sit amet</h3>
+                            <h4 class="p-sec-concept__heading">styles</h4>
                             <p class="p-sec-concept__text">高貴さを薫らせ、それでいて自由な精神を持ち合わせた雰囲気を表現。<br>“華やかさ”の中にこだわりのあるモノづくりを展開。素材感を活かし、クオリティの高いラインナップを提供</p>
                         </li>
                     </ul>
                 </section>
         
-                <section class="p-sec-collections c-inner">
+                <section class="p-sec-collections p-main__item c-inner">
                     <div class="p-index-title">
-                        <a class="p-index-title__target" href="#"><h2 class="p-index-title__en">COLLECTIONS</h2><span class="p-index-title__ja">コレクション</span></a>
+                        <a class="p-index-title__target" href="#"><h2 class="p-index-title__en">Collection</h2><span class="p-index-title__ja">コレクション</span></a>
                     </div>
+                    
                     <ul class="p-sec-collections__list">
-                        <li class="p-sec-collections__item"><img src="assets/images/gall.jpg"></li>
-                        <li class="p-sec-collections__item"><img src="assets/images/gall.jpg"></li>
-                       
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
+                        <li class="p-sec-collections__item">
+                            <a class="p-sec-collections__target" href="#">
+                                <img class="p-sec-collections__img" src="assets/images/gall.jpg">
+                                <h3 class="p-sec-collections__caption">2019<br>Autumm collection</h3>
+                            </a>
+                        </li>
+                        <li class="p-sec-collections__item">
+                            <a class="p-sec-collections__target" href="#">
+                                <img class="p-sec-collections__img" src="assets/images/gall.jpg">
+                                <h3 class="p-sec-collections__caption">2019<br>Autumm collection</h3>
+                            </a>
+                        </li>
+                   
                     </ul>
                 </section>
             
-                <section class="p-sec-gallery c-inner">
+                <section class="p-sec-gallery p-main__item c-inner">
                     <div class="p-index-title">
-                        <a class="p-index-title__target" href="#"><h2 class="p-index-title__en">GALLERY</h2><span class="p-index-title__ja">ギャラリー</span></a>
+                        <a class="p-index-title__target" href="#"><h2 class="p-index-title__en">Gallery</h2><span class="p-index-title__ja">ギャラリー</span></a>
                     </div>
                     <ul class="p-sec-gallery__cont c-col">
                         <li class="p-sec-gallery__item c-col__2 c-col__md-4 c-col__sm-6">
@@ -215,19 +218,20 @@
                     </ul>
                 </section>
             
-        </article>
+            </article>
+        </div>
     </main>
 
 
 
     <!-- FOOTER -->
-    <footer class="l-footer c-col__lg-12">
-        <div class="p-footer c-inner">
-            <div class="p-footer__cont">
-                <p class="p-footer__item"><a class="p-footer__target" href="#">Facebook</a></p>
-                <p class="p-footer__item"><a class="p-footer__target" href="#">Twitter</a></p>
-                <p class="p-footer__item"><a class="p-footer__target" href="#">Instagram</a></p>
-            </div>
+    <footer class="l-footer">
+        <div class="p-footer">
+            <ul class="p-footer__cont">
+                <li class="p-footer__item"><a class="p-footer__target" href="#">Facebook</a></li>
+                <li class="p-footer__item"><a class="p-footer__target" href="#">Twitter</a></li>
+                <li class="p-footer__item"><a class="p-footer__target" href="#">Instagram</a></li>
+            </ul>
             <div class="p-footer__copyright">
                 <p class="p-footer__copyright__text">Copyright All Rights Reserved.</p>
             </div>

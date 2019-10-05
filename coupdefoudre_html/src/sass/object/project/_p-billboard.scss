@@ -4,7 +4,7 @@
 
 .p-billboard__img{
     width: 100%;
-    height: calc(100vh - 115px);
+    height: calc(100vh - 102px);
     object-fit: cover;
 }
 
@@ -20,10 +20,10 @@
 
 @media screen and (max-width: 414px){
     .p-billboard{
-        padding-top: 65px;
+        padding-top: 57px;
     }
     
     .p-billboard__img{
-        height: calc(100vh - 65px);
+        height: calc(100vh - 57px);
     }
 }

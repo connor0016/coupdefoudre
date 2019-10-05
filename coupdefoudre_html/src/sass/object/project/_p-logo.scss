@@ -1,5 +1,6 @@
 .p-logo{
     text-align: center;
+    font-weight: bold;
     transition: all 0.3s linear;
 }
 
@@ -11,8 +12,8 @@
     .p-logo{
         text-align: left;
     }
-}
-
-@media screen and (max-width: 414px){
     
+    .p-header.is-active .p-logo{
+        font-size: var(--font-size-lg);
+    }
 }
