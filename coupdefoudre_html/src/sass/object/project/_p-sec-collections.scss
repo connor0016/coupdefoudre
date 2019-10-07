@@ -6,7 +6,7 @@
     overflow: hidden;
     flex: 0 1 calc(100% / 2);
     margin-left: var(--spacing-m);
-    background-color: var(--color-black);
+    background-color: var(--color-white);
 }
 
 .p-sec-collections__target{
@@ -22,7 +22,7 @@
 }
 
 .p-sec-collections__item:hover .p-sec-collections__img{
-    opacity: 0.5;
+    opacity: 0.3;
     transform: scale(1.03)
 }
 
@@ -30,14 +30,10 @@
     position: absolute;
     opacity: 0;
     text-align: center;
-    color: var(--color-white);
+    color: var(--color-black);
     transition: all 0.4s ease-in-out;
 }
 
 .p-sec-collections__item:hover .p-sec-collections__caption{
     opacity: 1;
-}
-
-@media screen and (max-width: 1024px){
-    
 }

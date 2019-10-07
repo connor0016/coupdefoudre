@@ -51,14 +51,10 @@
     animation: fade 0.4s ease-in-out 1s normal 1 forwards;
 }
 
-
-.p-mobilemenu__nav__target{
-    padding: var(--spacing-xx-s);
-}
-
 .p-mobilemenu__nav__target{
     position: relative;
     display: inline-block;
+    padding: var(--spacing-xx-s);
     color: var(--color-black);
 }
 
@@ -93,7 +89,7 @@
 }
 
 .p-mobilemenu__sns__target:hover{
-    opacity: 0.7;
+    opacity: 0.6;
 }
 
 

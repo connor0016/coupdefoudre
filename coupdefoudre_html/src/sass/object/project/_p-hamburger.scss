@@ -56,13 +56,13 @@
 }
 
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 768px){
     .p-header.is-active .p-hamburger{
         padding: 34px var(--spacing-m);
     }
 }
 
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 768px){
     
     .p-hamburger{
         padding: 31px var(--spacing-m);

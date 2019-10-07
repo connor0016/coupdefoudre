@@ -4,17 +4,17 @@
 
 .p-billboard__img{
     width: 100%;
-    height: calc(100vh - 102px);
+    height: calc(100vh - calc(102px + var(--spacing-m)));
     object-fit: cover;
 }
 
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 768px){
     .p-billboard{
         padding-top: 83px;
     }
     
     .p-billboard__img{
-        height: calc(100vh - 85px);
+        height: calc(100vh - calc(85px + var(--spacing-m)));
     }
 }
 
@@ -24,6 +24,6 @@
     }
     
     .p-billboard__img{
-        height: calc(100vh - 57px);
+        height: calc(100vh - calc(57px + var(--spacing-m)));
     }
 }
