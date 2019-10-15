@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
     padding: 41px var(--spacing-m);
-    transition: all 0.4s linear;
+    transition: all 0.4s ease;
 }
 
 .p-hamburger__item{
@@ -27,7 +27,7 @@
     border-radius: 3px;
     content: "";
     cursor: pointer;
-    background-color: black;
+    background-color: var(--color-black);
     transition: all 0.4s ease;
 }
 

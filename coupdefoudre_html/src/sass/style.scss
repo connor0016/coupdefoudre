@@ -1,38 +1,37 @@
 /*Foundation*/
-@import "foundation/reset.scss";
-@import "foundation/base.scss";
+@import "foundation/reset.sass";
+@import "foundation/base.sass";
 /*Foundation*/
 
 
 
 /*Layout*/
-@import "layout/l-container.scss";
-@import "layout/l-header.scss";
-@import "layout/l-main.scss";
-@import "layout/l-footer.scss";
+@import "layout/l-container.sass";
+@import "layout/l-header.sass";
+@import "layout/l-main.sass";
+@import "layout/l-footer.sass";
 /*Layout*/
 
 
 
 /*Object*/
 /*Component*/
-@import "object/component/c-grid.scss";
-@import "object/component/c-inner.scss";
-@import "object/component/c-animation.scss";
+@import "object/component/c-grid.sass";
+@import "object/component/c-inner.sass";
+@import "object/component/c-animation.sass";
+@import "object/component/c-title.sass";
 /*Component*/
 
 
 
 /*Project*/
-@import "object/project/p-header.scss";
-@import "object/project/p-headerbar.scss";
-@import "object/project/p-logo.scss";
+@import "object/project/p-headerbar.sass";
+@import "object/project/p-logo.sass";
 @import "object/project/p-hamburger.scss";
-@import "object/project/p-billboard.scss";
+@import "object/project/p-billboard.sass";
 @import "object/project/p-mobilemenu.scss";
 @import "object/project/p-mobilemenu-overlay.scss";
-@import "object/project/p-main.scss";
-@import "object/project/p-index-title.scss";
+@import "object/project/p-section.scss";
 @import "object/project/p-sec-news.scss";
 @import "object/project/p-sec-concept.scss";
 @import "object/project/p-sec-collections.scss";

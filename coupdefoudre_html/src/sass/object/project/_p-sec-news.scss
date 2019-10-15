@@ -25,7 +25,7 @@
     transition: all 0.4s ease-in-out;
 }
 
-.p-sec-news__item__box__mask:hover{
+.p-sec-news__item__box:hover .p-sec-news__item__box__mask{
     opacity: 1;
 }
 
@@ -38,8 +38,7 @@
 }
 
 .p-sec-news__item__caption__heading{
-    margin-bottom: va__captionr(--spacing-x-s);
-    font-weight: bold;
+    color: var(--color-black);
 }
 
 .p-sec-news__item__caption__heading__target{

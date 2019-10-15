@@ -1,61 +1,47 @@
-.p-sec-concept__cont{
-    justify-items: center;
-    align-items: center;
-    text-align: center;
-}
-
 .p-sec-concept__box-01{
-    overflow: hidden;
     order: 1;
 }
 
-.p-sec-concept__img{
-    transition: all 0.4s ease;
-}
-
-.p-sec-concept__img:hover{
-    transform: scale(1.03);
-}
-
 .p-sec-concept__box-02{
-    overflow: hidden;
     order: 4;
 }
 
 .p-sec-concept__description-01{
-    order: 2;
-    background-color: #fff;
-    height: 100%;
     display: flex;
-    justify-content: center;
+    justify-items: center;
     align-items: center;
+    flex: 0 1 40%;
+    order: 2;
     padding: var(--spacing-m);
+    height: 100%;
 }
 
 .p-sec-concept__description-02{
-    order: 3;
-    background-color: #fff;
-    height: 100%;
     display: flex;
-    justify-content: center;
+    justify-items: center;
     align-items: center;
+    flex: 0 1 40%;
+    order: 3;
     padding: var(--spacing-m);
+    height: 100%;
+
 }
 
 .p-sec-concept__heading{
-    margin-bottom: var(--spacing-m);
-    font-weight: bold;
+    padding: var(--spacing-x-s);
+    border-bottom: solid 1px black;
 }
 
+.p-sec-concept__text{
+    padding: var(--spacing-x-s);
+}
 
-
-@media screen and (max-width: 768px){
-    
-    .p-sec-concept__imgbox-01{
+@media screen and(max-width: 768px){
+    .p-sec-concept__box-01{
         order: 1;
     }
     
-    .p-sec-concept__imgbox-02{
+    .p-sec-concept__box-02{
         order: 3;
     }
     
@@ -66,10 +52,4 @@
     .p-sec-concept__description-02{
         order: 4;
     }
-    .p-sec-concept__description-01,
-    .p-sec-concept__description-02{
-        margin-right: 0;
-        margin-left: 0;
-    }
-    
 }

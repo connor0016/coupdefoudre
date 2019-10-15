@@ -1,39 +1,75 @@
-.p-sec-collections__list{
+.p-sec-collections{
+    background-color: #f4f3f2;
+}
+
+.p-sec-collections__cont{
     display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
 }
 
-.p-sec-collections__item{
-    overflow: hidden;
-    flex: 0 1 calc(100% / 2);
+.p-sec-collections__item:nth-child(2){
     margin-left: var(--spacing-m);
-    background-color: var(--color-white);
 }
 
-.p-sec-collections__target{
+.p-sec-collections__box{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.p-sec-collections__img{
+.p-sec-collections__mask{
+    position: absolute;
+    opacity: 0;
+    display: flex;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: auto;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
     transition: all 0.4s ease-in-out;
 }
 
-.p-sec-collections__item:hover .p-sec-collections__img{
-    opacity: 0.3;
-    transform: scale(1.03)
+.p-sec-collections__box__target:hover .p-sec-collections__mask{
+    opacity: 1;
 }
 
 .p-sec-collections__caption{
-    position: absolute;
-    opacity: 0;
-    text-align: center;
-    color: var(--color-black);
-    transition: all 0.4s ease-in-out;
+    padding: var(--spacing-m);
+    background-color: #fff;
 }
 
-.p-sec-collections__item:hover .p-sec-collections__caption{
-    opacity: 1;
+.p-sec-collections__caption__target:hover .p-sec-collections__caption__heading{
+    opacity: 0.6;
+}
+
+.p-sec-collections__caption__target:hover .p-sec-collections__caption__text{
+    opacity: 0.6;
+}
+
+.p-sec-collections__caption__heading{
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.p-sec-collections__caption__text{
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+@media screen and (max-width: 768px){
+    .p-sec-collections__cont{
+        flex-flow: column nowrap;
+    }
+    
+    .p-sec-collections__item{
+        margin-bottom: var(--spacing-l);
+    }
+    
+    .p-sec-collections__item:nth-child(2){
+        margin-left: 0;
+    }
 }

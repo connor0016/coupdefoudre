@@ -1,0 +1,17 @@
+.p-billboard
+    padding-top: 102px
+    @include md
+        padding-top: 83px
+    @include sm
+        padding-top: 57px
+
+
+.p-billboard__img
+    width: 100%
+    height: calc(100vh - calc(102px + var(--spacing-m)))
+    object-fit: cover  
+    @include md
+        height: calc(100vh - calc(85px + var(--spacing-m)))  
+    @include sm
+        height: calc(100vh - calc(57px + var(--spacing-m)))
+    

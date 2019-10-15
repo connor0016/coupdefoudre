@@ -1,5 +1,6 @@
 .p-sec-gallery__cont{
     grid-gap: var(--spacing-x-s);
+    margin-bottom: var(--spacing-m);
 }
 
 .p-sec-gallery__item{
@@ -7,6 +8,7 @@
 }
 
 .p-sec-gallery__item img{
+    width: 100%;
     filter: grayscale(100%);
     transition: all 0.4s ease-in-out;
 }
