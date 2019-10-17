@@ -1,0 +1,59 @@
+.p-hamburger
+    position: fixed
+    display: flex
+    top: 0
+    right: 0
+    z-index: 999
+    justify-content: center
+    align-items: center
+    padding: 41px var(--spacing-m)
+    transition: all 0.4s ease
+    &.is-active
+        .p-hamburger__lines-top
+            transform: translateY(10px) rotate(45deg)
+        .p-hamburger__lines-middle
+            opacity: 0;
+        .p-hamburger__lines-bottom
+            transform: translateY(-10px) rotate(-45deg)
+    @include md
+        padding: 31px var(--spacing-m)
+    @include sm
+        padding: 18px var(--spacing-m)
+
+
+.p-hamburger__item
+    position: relative
+    width: 50px
+    height: 20px
+    cursor: pointer
+    @include md
+        width: 40px
+    @include sm
+        width: 30px
+
+
+.p-hamburger__lines-top, 
+.p-hamburger__lines-middle, 
+.p-hamburger__lines-bottom
+    position: absolute
+    display: block
+    width: 100%
+    height: 1px
+    border-radius: 3px
+    content: ""
+    cursor: pointer
+    background-color: var(--color-black)
+    transition: all 0.4s ease
+
+
+.p-hamburger__lines-top
+    top: 0
+
+
+.p-hamburger__lines-middle
+    top: 43%
+
+
+.p-hamburger__lines-bottom
+    bottom: 0
+

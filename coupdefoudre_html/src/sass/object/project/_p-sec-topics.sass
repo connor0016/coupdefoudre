@@ -1,0 +1,68 @@
+.p-sec-topics__cont
+    grid-gap: var(--spacing-s)
+    margin-bottom: var(--spacing-s)
+
+
+.p-sec-topics__btn
+    text-align: right
+    padding: var(--spacing-s)
+
+
+.p-sec-topics__item
+    padding: var(--spacing-s)
+    background-color: var(--color-main)
+
+
+.p-sec-topics__item__target
+    &:hover
+        .p-sec-topics__box__mask
+            opacity: 1
+        .p-sec-topics__caption
+            opacity: 0.7
+
+
+.p-sec-topics__box
+    position: relative
+
+
+.p-sec-topics__box__img
+    width: 100%
+    height: auto
+
+
+.p-sec-topics__box__mask
+    position: absolute
+    top: 0
+    left: 0
+    opacity: 0
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: 100%
+    background-color: rgba(255, 255, 255, 0.6)
+    transition: all 0.4s ease-in-out
+
+
+.p-sec-topics__box__text
+    color: var(--color-black)
+
+
+.p-sec-topics__caption
+    padding-top: var(--spacing-s)
+    transition: all 0.4s ease-in-out
+
+
+.p-sec-topics__caption__heading
+    color: var(--color-black)
+
+
+.p-sec-topics__caption__day
+    font-size: var(--font-size-sm)
+    color: var(--color-lightgray)
+
+
+.p-sec-topics__caption__icon
+    margin-right: var(--spacing-x-s)
+    color: var(--color-red)
+

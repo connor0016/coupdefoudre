@@ -24,6 +24,11 @@ $md: 768px
 $sm: 414px
 
 
+@mixin lg
+    @media (min-width: ($md))
+        @content
+
+
 @mixin md
     @media (max-width: ($md))
         @content
@@ -50,10 +55,10 @@ $sm: 414px
     --spacing-x-l: 128px
     --spacing-xx-l: 256px
     
+    --color-base: #f4f3f2
+    --color-main: #fff
     --color-black: #0d0d0d
-    --color-white: #fff
     --color-lightgray: #606060
-    --color-main: #f4f3f2
     --color-red: #f95b5b
     
     @include md

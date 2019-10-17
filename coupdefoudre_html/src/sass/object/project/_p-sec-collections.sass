@@ -1,0 +1,75 @@
+.p-sec-collections__cont
+    display: flex
+    flex-flow: row nowrap
+    justify-content: space-between
+    margin-bottom: var(--spacing-s)
+    @include md
+        flex-flow: column nowrap
+
+
+.p-sec-collections__btn
+    text-align: right
+    padding: var(--spacing-s)
+
+
+.p-sec-collections__item
+    flex: 0 1 calc(100% / 2)
+    padding: var(--spacing-m)
+    background-color: var(--color-main)
+    &:nth-child(2)
+        margin-left: var(--spacing-m)
+    @include md
+        margin-bottom: var(--spacing-l)
+        &:nth-child(2)
+            margin-left: 0
+            margin-bottom: 0
+
+
+.p-sec-collections__box
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+
+
+.p-sec-collections__item__target
+    &:hover
+        .p-sec-collections__box__mask
+            opacity: 1
+        .p-sec-collections__caption
+            opacity: 0.6;
+
+
+.p-sec-collections__box__img
+    width: 100%
+    height: auto
+
+
+.p-sec-collections__box__mask
+    position: absolute
+    opacity: 0
+    display: flex
+    top: 0
+    left: 0
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: 100%
+    background-color: rgba(255, 255, 255, 0.6)
+    transition: all 0.4s ease-in-out
+
+
+.p-sec-collections__box__mask__text
+    text-align: center
+
+
+.p-sec-collections__caption
+    padding-top: var(--spacing-m)
+    transition: all 0.4s ease-in-out
+
+
+.p-sec-collections__caption__heading,
+.p-sec-collections__caption__text
+    text-align: center
+    transition: all 0.2s ease
+
