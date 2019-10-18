@@ -13,6 +13,8 @@
     &.is-active
         display: flex
         animation: slidein 0.4s ease-in forwards
+    @include md
+        width: 70%
     @include sm
         width: 100%
 
@@ -24,10 +26,8 @@
 .p-mobilemenu__nav__item
     opacity: 0
     padding: var(--spacing-s)
-    border-bottom: solid 1px #f0f1f4
     font-size: var(--font-size-lg)
     &:nth-child(1)
-        border-top: solid 1px #f0f1f4
         animation: fade 0.4s ease-in-out 0.5s normal 1 forwards
     &:nth-child(2)
         animation: fade 0.4s ease-in-out 0.6s normal 1 forwards
@@ -47,7 +47,6 @@
     position: relative
     display: inline-block
     padding: var(--spacing-xx-s)
-    font-family: 'Josefin Sans', sans-serif
     color: var(--color-black)
     &::after
         position: absolute
@@ -80,7 +79,6 @@
 
 .p-mobilemenu__sns__target
     padding: var(--spacing-xx-s)
-    font-family: 'Josefin Sans', sans-serif
     color: var(--color-black)
     transition: all 0.2s ease
     &:hover

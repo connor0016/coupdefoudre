@@ -11,7 +11,7 @@ body
     font-feature-settings: "palt"
     font-size: 1.4em
     font-weight: 400
-    color: #111
+    color: #0d0d0d
 
 
 img
@@ -19,23 +19,23 @@ img
     height: auto
     line-height: 0
 
-
-$md: 768px
-$sm: 414px
+$pc: 769px
+$tab: 768px
+$sp: 414px
 
 
 @mixin lg
-    @media (min-width: ($md))
+    @media (min-width: ($pc))
         @content
 
 
 @mixin md
-    @media (max-width: ($md))
+    @media (max-width: ($tab))
         @content
 
 
 @mixin sm
-    @media (max-width: ($sm))
+    @media (max-width: ($sp))
         @content
 
 

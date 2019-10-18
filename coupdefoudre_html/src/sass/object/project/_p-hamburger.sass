@@ -10,15 +10,25 @@
     transition: all 0.4s ease
     &.is-active
         .p-hamburger__lines-top
-            transform: translateY(10px) rotate(45deg)
+            transform: translateY(9px) rotate(45deg)
         .p-hamburger__lines-middle
             opacity: 0;
         .p-hamburger__lines-bottom
             transform: translateY(-10px) rotate(-45deg)
     @include md
-        padding: 31px var(--spacing-m)
+        padding: 32px var(--spacing-m)
+        &.is-active
+            .p-hamburger__lines-top
+                transform: translateY(8px) rotate(45deg)
+            .p-hamburger__lines-bottom
+                transform: translateY(-9px) rotate(-45deg)
     @include sm
-        padding: 18px var(--spacing-m)
+        padding: 20px var(--spacing-m)
+        &.is-active
+            .p-hamburger__lines-top
+                transform: translateY(7px) rotate(45deg)
+            .p-hamburger__lines-bottom
+                transform: translateY(-8px) rotate(-45deg)
 
 
 .p-hamburger__item
@@ -28,8 +38,10 @@
     cursor: pointer
     @include md
         width: 40px
+        height: 18px
     @include sm
         width: 30px
+        height: 16px
 
 
 .p-hamburger__lines-top, 
@@ -38,7 +50,7 @@
     position: absolute
     display: block
     width: 100%
-    height: 1px
+    height: 2px
     border-radius: 3px
     content: ""
     cursor: pointer
@@ -51,7 +63,7 @@
 
 
 .p-hamburger__lines-middle
-    top: 43%
+    top: 45%
 
 
 .p-hamburger__lines-bottom
