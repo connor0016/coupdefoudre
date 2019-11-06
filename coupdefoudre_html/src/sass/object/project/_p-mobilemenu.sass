@@ -53,14 +53,15 @@
         display: block
         width: 0
         height: 1px
-        left : 50%
+        left : 0%
         bottom: 0
         content: ""
         background-color: #000
         transition: all 0.4s ease
-        transform: translateX(-50%)
-    &:hover::after
-        width: 100%
+        transform: translateX(0%)
+    @include lg
+        &:hover::after
+            width: 100%
     
 
 .p-mobilemenu__sns
@@ -80,7 +81,8 @@
 .p-mobilemenu__sns__target
     padding: var(--spacing-xx-s)
     color: var(--color-black)
-    transition: all 0.2s ease
-    &:hover
-        opacity: 0.6
+    transition: all 0.4s ease
+    @include lg
+        &:hover
+            opacity: 0.6
 

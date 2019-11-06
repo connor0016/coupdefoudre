@@ -14,11 +14,12 @@
 
 
 .p-sec-topics__item__target
-    &:hover
-        .p-sec-topics__box__mask
-            opacity: 1
-        .p-sec-topics__caption
-            opacity: 0.7
+    @include lg
+        &:hover
+            .p-sec-topics__box__mask
+                opacity: 1
+            .p-sec-topics__caption
+                opacity: 0.7
 
 
 .p-sec-topics__box
@@ -54,6 +55,7 @@
 
 
 .p-sec-topics__caption__heading
+    font-size: var(--font-size-sm)
     color: var(--color-black)
 
 
@@ -64,5 +66,6 @@
 
 .p-sec-topics__caption__icon
     margin-right: var(--spacing-x-s)
+    font-size: var(--font-size-sm)
     color: var(--color-red)
 

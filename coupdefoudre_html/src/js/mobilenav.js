@@ -19,42 +19,23 @@ mobilemenu_overlay.addEventListener('click', function() {
 
 
 //ScrollHold
+var scrollPosition = '';
+
 btn.addEventListener('click', function() {
-    var scrollPosition = window.pageYOffset;
+    if (scrollPosition) scrollPosition = window.pageYOffset;
     
     if (mobilemenu_overlay.classList.contains('is-active')){
+        const scrollPosition = window.pageYOffset;
         container.classList.add('is-active');
         container.style.top = '-' + scrollPosition + 'px';
         console.log(scrollPosition);
     }
     else {
         container.classList.remove('is-active');
-        container.style.top = '-' + scrollPosition + 'px';
+        container.style.top = '';
+        window.scrollTo(0, scrollPosition);
+        console.log(scrollPosition);
+        
     }
-}, false);
-//↑これだと、スクロール値をopenした時も、closeしたときも取得しているため、close時にposition: fixedによりtop: 0となってしまっている。
-
-
-/*
-//もしopen,closeのボタンをそれぞれ用意した場合に考えていたこと...↓
-//openボタンクリック時のスクロール値を格納
-const scrollPosition;
-
-open-btn.addEventListener('click', function() {
-    //スクロール値を取得
-    var scrollPosition = window.pageYOffset;
-    //l-containerにis-active(position: fixed)を付与
-    container.classList.add('is-active');
-    //スクロール値をl-containerのtop:''に入れ動かないようにする
-    container.style.top = '-' + scrollPosition + 'px';
-}, false);
-
-
-
-close-btn.addEventListener('click', function() {
-    //is-activeを削除
-    container.classList.remove('is-active');
-    //position: fixedによりトップへ戻ってしまうため再度スクロール値を与える
-    container.style.top = '-' + scrollPosition + 'px';
-}, false);
-*/
+        
+});

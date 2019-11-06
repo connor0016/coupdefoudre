@@ -1,11 +1,23 @@
 .c-btn
     font-size: var(--font-size-normal)
-
-
+    
+    
 .c-btn__target
-    border-bottom: solid 1px var(--color-black)
+    position: relative
+    display: inline-block
     padding: var(--spacing-x-s)
     color: var(--color-lightgray)
-    transition: all 0.2s ease
-    &:hover
-        opacity: 0.6
+    &::after
+        position: absolute
+        display: block
+        width: 0
+        height: 1px
+        left : 0%
+        bottom: 0
+        content: ""
+        background-color: #000
+        transform: translateX(0%)
+        transition: all 0.4s ease
+    @include lg
+        &:hover::after
+            width: 100%

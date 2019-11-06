@@ -24,25 +24,30 @@
             margin-left: 0
             margin-bottom: 0
 
+        
+.p-sec-collections__item__target
+    @include lg
+        &:hover
+            .p-sec-collections__box__img
+                transform: scale(1.03)
+            .p-sec-collections__box__mask
+                opacity: 1
+            .p-sec-collections__caption
+                opacity: 0.6
+
 
 .p-sec-collections__box
     position: relative
+    overflow: hidden
     display: flex
     justify-content: center
     align-items: center
 
 
-.p-sec-collections__item__target
-    &:hover
-        .p-sec-collections__box__mask
-            opacity: 1
-        .p-sec-collections__caption
-            opacity: 0.6;
-
-
 .p-sec-collections__box__img
     width: 100%
     height: auto
+    transition: all 0.4s ease-in-out
 
 
 .p-sec-collections__box__mask
@@ -71,5 +76,4 @@
 .p-sec-collections__caption__heading,
 .p-sec-collections__caption__text
     text-align: center
-    transition: all 0.2s ease
 
