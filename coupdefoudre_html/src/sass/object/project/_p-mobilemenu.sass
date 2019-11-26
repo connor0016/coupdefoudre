@@ -1,7 +1,7 @@
 .p-mobilemenu
     position: fixed
     flex-flow: column nowrap
-    justify-content: space-between
+    justify-content: center
     top: 0
     right: 0
     z-index: 990
@@ -17,6 +17,8 @@
         width: 70%
     @include sm
         width: 100%
+        &.is-active
+            animation: slidein-ToptoBottom 0.4s ease-in forwards
 
 
 .p-mobilemenu__nav

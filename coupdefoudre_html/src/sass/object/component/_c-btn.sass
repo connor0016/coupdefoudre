@@ -1,13 +1,13 @@
 .c-btn
-    font-size: var(--font-size-normal)
+    font-size: var(--font-size-sm)
     
     
 .c-btn__target
     position: relative
     display: inline-block
-    padding: var(--spacing-x-s)
+    padding: var(--spacing-x-s) var(--spacing-s)
     color: var(--color-lightgray)
-    &::after
+    &::before
         position: absolute
         display: block
         width: 0
@@ -15,9 +15,24 @@
         left : 0%
         bottom: 0
         content: ""
-        background-color: #000
+        background-color: var(--color-lightgray)
         transform: translateX(0%)
-        transition: all 0.4s ease
+        transition: all 0.8s ease
+    &::after
+        content: ""
+        display: block
+        padding: var(--spacing-xx-s)
+        border-top: 1px solid var(--color-lightgray)
+        border-right: 1px solid var(--color-lightgray)
+        border-bottom: 1px solid transparent
+        border-left: 1px solid transparent
+        position: absolute
+        right: 0
+        top: 50%
+        transform: translateY(-50%) translate3d(0, 0, 0) rotate(45deg)
+        transition: all 0.8s ease
     @include lg
-        &:hover::after
+        &:hover::before
             width: 100%
+        &:hover::after
+            right: -5%

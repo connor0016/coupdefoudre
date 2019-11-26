@@ -93,7 +93,7 @@ img {
   --spacing-l: 64px;
   --spacing-x-l: 128px;
   --spacing-xx-l: 256px;
-  --color-base: #f4f3f2;
+  --color-base: #f7f6f5;
   --color-main: #fff;
   --color-black: #0d0d0d;
   --color-lightgray: #606060;
@@ -387,6 +387,24 @@ h1 {
   }
 }
 
+@-webkit-keyframes slidein-ToptoBottom {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slidein-ToptoBottom {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
 .c-title {
   margin-bottom: var(--spacing-l);
 }
@@ -415,17 +433,17 @@ h1 {
 }
 
 .c-btn {
-  font-size: var(--font-size-normal);
+  font-size: var(--font-size-sm);
 }
 
 .c-btn__target {
   position: relative;
   display: inline-block;
-  padding: var(--spacing-x-s);
+  padding: var(--spacing-x-s) var(--spacing-s);
   color: var(--color-lightgray);
 }
 
-.c-btn__target::after {
+.c-btn__target::before {
   position: absolute;
   display: block;
   width: 0;
@@ -433,14 +451,32 @@ h1 {
   left: 0%;
   bottom: 0;
   content: "";
-  background-color: #000;
+  background-color: var(--color-lightgray);
   transform: translateX(0%);
-  transition: all 0.4s ease;
+  transition: all 0.8s ease;
+}
+
+.c-btn__target::after {
+  content: "";
+  display: block;
+  padding: var(--spacing-xx-s);
+  border-top: 1px solid var(--color-lightgray);
+  border-right: 1px solid var(--color-lightgray);
+  border-bottom: 1px solid transparent;
+  border-left: 1px solid transparent;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) translate3d(0, 0, 0) rotate(45deg);
+  transition: all 0.8s ease;
 }
 
 @media (min-width: 769px) {
-  .c-btn__target:hover::after {
+  .c-btn__target:hover::before {
     width: 100%;
+  }
+  .c-btn__target:hover::after {
+    right: -5%;
   }
 }
 
@@ -620,7 +656,7 @@ h1 {
 .p-mobilemenu {
   position: fixed;
   flex-flow: column nowrap;
-  justify-content: space-between;
+  justify-content: center;
   top: 0;
   right: 0;
   z-index: 990;
@@ -646,6 +682,10 @@ h1 {
 @media (max-width: 414px) {
   .p-mobilemenu {
     width: 100%;
+  }
+  .p-mobilemenu.is-active {
+    -webkit-animation: slidein-ToptoBottom 0.4s ease-in forwards;
+            animation: slidein-ToptoBottom 0.4s ease-in forwards;
   }
 }
 
@@ -912,13 +952,13 @@ h1 {
 
 @media (min-width: 769px) {
   .p-sec-collections__item__target:hover .p-sec-collections__box__img {
-    transform: scale(1.03);
+    transform: scale(1.1);
   }
   .p-sec-collections__item__target:hover .p-sec-collections__box__mask {
     opacity: 1;
   }
   .p-sec-collections__item__target:hover .p-sec-collections__caption {
-    opacity: 0.6;
+    opacity: 0.7;
   }
 }
 
@@ -933,7 +973,7 @@ h1 {
 .p-sec-collections__box__img {
   width: 100%;
   height: auto;
-  transition: all 0.4s ease-in-out;
+  transition: all 1.5s cubic-bezier(0.58, -0.09, 0.4, 0.95);
 }
 
 .p-sec-collections__box__mask {
