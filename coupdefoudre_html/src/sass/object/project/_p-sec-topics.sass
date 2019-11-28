@@ -13,17 +13,15 @@
     background-color: var(--color-main)
 
 
-.p-sec-topics__item__target
+.p-sec-topics__box
+    position: relative
+
+
+.p-sec-topics__box__target
     @include lg
         &:hover
             .p-sec-topics__box__mask
                 opacity: 1
-            .p-sec-topics__caption
-                opacity: 0.7
-
-
-.p-sec-topics__box
-    position: relative
 
 
 .p-sec-topics__box__img
@@ -51,7 +49,6 @@
 
 .p-sec-topics__caption
     padding-top: var(--spacing-s)
-    transition: all 0.4s ease-in-out
 
 
 .p-sec-topics__caption__heading
@@ -59,13 +56,19 @@
     color: var(--color-black)
 
 
+.p-sec-topics__caption__target
+    transition: all 0.4s ease
+    @include lg
+        &:hover
+            opacity: 0.6
+
 .p-sec-topics__caption__day
     font-size: var(--font-size-sm)
-    color: var(--color-lightgray)
+    color: var(--font-color-gray)
 
 
 .p-sec-topics__caption__icon
     margin-right: var(--spacing-x-s)
     font-size: var(--font-size-sm)
-    color: var(--color-red)
+    color: var(--font-color-red)
 
