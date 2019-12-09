@@ -1,7 +1,6 @@
 const btn = document.querySelector('.js-mobilemenu-btn');
 const mobilemenu = document.querySelector('.js-mobilemenu');
 const mobilemenu_overlay = document.querySelector('.js-mobilemenu-overlay');
-const container = document.querySelector('.js-container');
 
 
 //Mobilenav
@@ -20,6 +19,7 @@ mobilemenu_overlay.addEventListener('click', function() {
 
 //ScrollHold
 var scrollPosition = '';
+const container = document.querySelector('js-container');
 
 btn.addEventListener('click', function() {
     if (scrollPosition) scrollPosition = window.pageYOffset;
