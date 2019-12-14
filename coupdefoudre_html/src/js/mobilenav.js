@@ -15,27 +15,3 @@ mobilemenu_overlay.addEventListener('click', function() {
     mobilemenu.classList.remove('is-active');
     mobilemenu_overlay.classList.remove('is-active');
 }, false);
-
-
-//ScrollHold
-var scrollPosition = '';
-const container = document.querySelector('js-container');
-
-btn.addEventListener('click', function() {
-    if (scrollPosition) scrollPosition = window.pageYOffset;
-    
-    if (mobilemenu_overlay.classList.contains('is-active')){
-        const scrollPosition = window.pageYOffset;
-        container.classList.add('is-active');
-        container.style.top = '-' + scrollPosition + 'px';
-        console.log(scrollPosition);
-    }
-    else {
-        container.classList.remove('is-active');
-        container.style.top = '';
-        window.scrollTo(0, scrollPosition);
-        console.log(scrollPosition);
-        
-    }
-        
-});
